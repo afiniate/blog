@@ -22,12 +22,13 @@ body {
   text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
+h1{
+  font-size: 110%;
+  margin-bottom: 1em;
 }
 
-h1 {
-  margin-bottom: 1em;
+h2, h3, h4, h5, h6 {
+    font-size: 100%;
 }
 
 p {
