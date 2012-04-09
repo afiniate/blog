@@ -9,15 +9,17 @@ title: Setting Up a Reasonable MLTon Development Environment in Emacs
 [Standard ML](http://en.wikipedia.org/wiki/Standard_ML) and
 specifically Standard ML as compiled by the extremely good
 [MLton](http://mlton.org) compiler has become the low level
-optimization language for applications written here at 10io. In places
-where we can gain some benefit from faster natively compiled code
-where it customary to extend the system using C via a
-[NIF](http://www.erlang.org/doc/man/erl_nif.html) we actually extend
-the system using SML using the same NIF technology. It does take a
-very thin shim written in C to get this done. However, overall we
-consider this the best available trade-off between speed of execution
-and bug free runtime code that we can get. So far that consideration
-has proven to be correct.
+optimization language for applications written here at 10io. We are a
+big user of [Erlang](http://www.erlang.org). In Erlang applications it
+is not uncommon for there to be places where some gain can be had from
+using faster natively compiled code. In those places, it customary to
+extend the Erlang system using C via a
+[NIF](http://www.erlang.org/doc/man/erl_nif.html). However, We have
+actually started using SML and the same NIF technology to accomplish
+this purpose. It does take a very thin shim written in C to get this
+done. However, overall we consider this the best available trade-off
+between speed of execution and bug free runtime code that we can
+get. So far that consideration has proven to be correct.
 
 The benefits of SML as an extension language is the subject for a
 future post, though. This post is about setting up a reasonably
@@ -77,7 +79,7 @@ necessity for any rational development. There is some bad news and
 some good news about that. The bad news is that MLton doesn't really
 work that well with Flymake, at all. There are two reasons for
 this. The first reason is that MLton is a slow compiler and the second
-is that it can't compile a just a single file (as flymake requires),
+is that it can't compile just a single file (as flymake requires),
 it needs to compile the entire project. Both of these reasons stem
 from the fact that MLton is a whole program compiler. It needs access
 to all the source for a project to build that project. Now that we
