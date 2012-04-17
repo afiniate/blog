@@ -24,13 +24,21 @@ MLton compiler. These reasons can be summed up as follows:
 Easy Integration Into The Build
 -------------------------------
 
-MLton, by design, will put out any number of intermediate build
-results (archive files, shared objects, executables, etc). This makes
-it very easy to integrate into a build system that is not SML/MLton
-focused. Granted this is *possible* to do with OCaml, but it's much more
-of a hack than anything else. It also seems to be unsupported by the
-maintainers. I suspect the main deal here is that OCaml expects to be
-driving the build while SML/MLton does not.
+Both MLton and Ocaml happily integrate into many different
+environments. Originally, I was under the mistaken impression that
+Ocaml was not happy building shared objects or intermediate
+libraries. However, [@jakedonham](https://twitter.com/#!/jakedonham)
+and [@psnively](https://twitter.com/#!/psnively) pointed out my error
+on this point. My original (incorrect) paragraph appears below.
+
+    I was MLton, by design, will put out any number of intermediate
+    build results (archive files, shared objects, executables,
+    etc). This makes it very easy to integrate into a build system
+    that is not SML/MLton focused. Granted this is *possible* to do
+    with OCaml, but it's much more of a hack than anything else. It
+    also seems to be unsupported by the maintainers. I suspect the
+    main deal here is that OCaml expects to be driving the build while
+    SML/MLton does not.
 
 Managing Native Threads
 -----------------------
